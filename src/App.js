@@ -1,26 +1,36 @@
-import React from 'react';
+
 import logo from './logo.svg';
 import './App.css';
+import React, { Component } from 'react';
 
-function App() {
-  return (
-    <div className="App">
+const ReactMarkdown = require('react-markdown')
+
+const input = '# This is a header\n\nAnd this is a paragraph'
+
+class App extends Component {
+  async getData() {
+    const res = await fetch("hello-world.md");
+    const data = await res.text();
+    console.log(data);
+    return this.setState({ data });
+  }
+
+  state = await this.getData() 
+
+  componentWillMount() {
+    this.getData();
+  }
+
+  render() {
+    return (
+      <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <ReactMarkdown source={input} />
       </header>
+      <ReactMarkdown source={this.state.data} />
     </div>
-  );
+    );
+  }
 }
 
 export default App;
