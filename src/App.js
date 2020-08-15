@@ -32,6 +32,8 @@ class App extends Component {
       <div className ="page" >
         <h2>Fork me on Github!</h2>
         <p>My Github handle is: <a href="https://github.com/ashattack">@ashattack </a> </p>
+        <div id="github-contributions"></div>
+        <div id="github-language-distribution" ></div>
       </div>
       <ReactMarkdown source={this.state.data} />
     </div>
