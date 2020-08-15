@@ -25,9 +25,14 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-      <header className="App-header">
-        <ReactMarkdown source={input} />
+      <header className="App-header" >
+        <h1>Ashlyn Hicks</h1> 
+      <h3> Web Developer</h3>
       </header>
+      <div className ="page" >
+        <h2>Fork me on Github!</h2>
+        <p>My Github handle is: <a href="https://github.com/ashattack">@ashattack </a> </p>
+      </div>
       <ReactMarkdown source={this.state.data} />
     </div>
     );
