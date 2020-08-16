@@ -40,3 +40,7 @@
     transform: rotate(360deg);
   }
 }
+
+#footer {
+  min-height: 25vh;
+}
